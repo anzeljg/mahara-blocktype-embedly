@@ -20,25 +20,27 @@
  * @package    mahara
  * @subpackage blocktype-embedly
  * @author     Gregor Anzelj
+ * @translator Iñaki Arenaza
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL
  * @copyright  (C) 2011 Gregor Anzelj, gregor.anzelj@gmail.com
+ * @copyright  (C) 2011 Iñaki Arenaza, inaki.arenaza@gmail.com
  *
  */
 
 defined('INTERNAL') || die();
 
 $string['title'] = 'Embed.ly';
-$string['description'] = 'Embed external content';
-$string['mediaurl'] = 'Content URL';
-$string['mediaurldescription2'] = 'Paste the URL of the page where the content (video, image, audio, etc.) is located. You can embed content from the following %sservices%s.';
-$string['mediaurlpatterns'] = 'To see which url patterns from each service you can embed, open page of supported %sservices%s and click service name.';
-$string['showdescription'] = 'Show Description?';
-$string['width'] = 'Width';
-$string['height'] = 'Height';
-$string['align'] = 'Align';
-$string['alignleft'] = 'Left';
-$string['aligncenter'] = 'Center';
-$string['alignright'] = 'Right';
-$string['invalidurl'] = 'Invalid URL';
+$string['description'] = 'Insertar contenido externo';
+$string['mediaurl'] = 'URL del contenido';
+$string['mediaurldescription2'] = 'Pegue la URL de la página donde está disponible el contenido (vídeo, imagen, audio, etc.). Puede incorporar contenido desde los siguientes %sservicios%s.';
+$string['mediaurlpatterns'] = 'Para ver que patrones de URL puede incorporar desde cada servicio, abra la página de los %sservicios%s disponibles y pulse sobre el nombre del servicio.';
+$string['showdescription'] = '¿Mostrar descripción?';
+$string['width'] = 'Anchura';
+$string['height'] = 'Altura';
+$string['align'] = 'Alinear';
+$string['alignleft'] = 'Izquierda';
+$string['aligncenter'] = 'Centro';
+$string['alignright'] = 'Derecha';
+$string['invalidurl'] = 'URL inválida';
 
 ?>

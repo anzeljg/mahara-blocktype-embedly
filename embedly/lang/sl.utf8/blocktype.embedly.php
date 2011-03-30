@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Mahara: Electronic portfolio, weblog, resume builder and social networking
  * Copyright (C) 2006-2009 Catalyst IT Ltd and others; see:
@@ -28,17 +28,17 @@
 defined('INTERNAL') || die();
 
 $string['title'] = 'Embed.ly';
-$string['description'] = 'Embed external content';
-$string['mediaurl'] = 'Content URL';
-$string['mediaurldescription2'] = 'Paste the URL of the page where the content (video, image, audio, etc.) is located. You can embed content from the following %sservices%s.';
-$string['mediaurlpatterns'] = 'To see which url patterns from each service you can embed, open page of supported %sservices%s and click service name.';
-$string['showdescription'] = 'Show Description?';
-$string['width'] = 'Width';
-$string['height'] = 'Height';
-$string['align'] = 'Align';
-$string['alignleft'] = 'Left';
-$string['aligncenter'] = 'Center';
-$string['alignright'] = 'Right';
-$string['invalidurl'] = 'Invalid URL';
+$string['description'] = 'Vgradite zunanjo vsebino';
+$string['mediaurl'] = 'URL vsebine';
+$string['mediaurldescription2'] = 'Prilepite URL strani, ki vsebuje vsebino (video, slike, zvok, itd.). Vgradite lahko vsebino naslednjih %sstoritev%s.';
+$string['mediaurlpatterns'] = 'Če si želite ogledati, katere url-je storitve lahko vgradite, odprite stran podprtih %sstoritev%s in kliknite na ime storitve.';
+$string['showdescription'] = 'Prikažem opis?';
+$string['width'] = 'Širina';
+$string['height'] = 'Višina';
+$string['align'] = 'Poravnava';
+$string['alignleft'] = 'Levo';
+$string['aligncenter'] = 'Sredinsko';
+$string['alignright'] = 'Desno';
+$string['invalidurl'] = 'Neveljaven URL';
 
 ?>

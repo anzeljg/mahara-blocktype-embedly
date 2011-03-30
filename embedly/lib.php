@@ -54,6 +54,9 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
         $configdata = $instance->get('configdata');
         $width   = (!empty($configdata['width'])) ? hsc($configdata['width']) : null;
         $height  = (!empty($configdata['height'])) ? hsc($configdata['height']) : null;
+        $align  = (!empty($configdata['align'])) ? hsc($configdata['align']) : 'left';
+		
+        $result  = ''; // To silence warning
 		
         if (isset($configdata['mediaid'])) {
             // IE seems to wait for all elements on the page to load
@@ -67,10 +70,13 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
             // initially and add it in after the page has loaded.
 
 			$url = 'http://api.embed.ly/1/oembed?url=' . urlencode($configdata['mediaid']) . '&maxwidth=' . $width . '&maxheight=' . $height . '&wmode=transparent';
-			$json = file_get_contents($url);
-			$data = json_decode($json, true);
+            $request = array(
+                CURLOPT_URL => $url,
+            );
+            $result = mahara_http_request($request);
+            $data = json_decode($result->data, true);
 
-			$result  = '';
+			$result = '<div class="' . $align . '">';
 			switch ($data['type']) {
 				case 'photo':
 					$result .= '<img src="' . $data['url'] . '" width="' . $data['width'] . '" height="' . $data['height'] . '" border="0">';
@@ -87,6 +93,7 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
 			if (isset($data['description']) && !empty($configdata['showdescription'])) {
 				$result .= '<p>' . nl2br($data['description']) . '</p>';
 			}
+			$result .= '</div>';
         }
 
         return $result;
@@ -134,6 +141,17 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
                 ),
                 'defaultvalue' => (!empty($configdata['height'])) ? $configdata['height'] : null,
             ),
+            'align' => array(
+                'type' => 'radio',
+                'title' => get_string('align','blocktype.embedly'),
+                'defaultvalue' => (!empty($configdata['align'])) ? $configdata['align'] : 'left',
+				'options' => array(
+					'left' => get_string('alignleft','blocktype.embedly'),
+					'center' => get_string('aligncenter','blocktype.embedly'),
+					'right' => get_string('alignright','blocktype.embedly'),
+				),
+				'separator' => '&nbsp;&nbsp;&nbsp;',
+			),
         );
     }
 
