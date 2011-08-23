@@ -41,4 +41,7 @@ $string['aligncenter'] = 'Sredinsko';
 $string['alignright'] = 'Desno';
 $string['invalidurl'] = 'Neveljaven URL';
 
+$string['apikey'] = 'Embed.ly API ključ';
+$string['apikeydescription'] = 'Če želite vgraditi spletne vsebine boste potrebovali veljaven Embed.ly API ključ. %sZaprosite za svoj brezplačni ključ na spletu%s.';
+
 ?>

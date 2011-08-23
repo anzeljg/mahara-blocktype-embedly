@@ -43,4 +43,7 @@ $string['aligncenter'] = 'Centro';
 $string['alignright'] = 'Derecha';
 $string['invalidurl'] = 'URL inválida';
 
+$string['apikey'] = 'Embed.ly clave de la API';
+$string['apikeydescription'] = 'Para incrustar contenido de la web, usted necesitará una válida Embed.ly clave de la API. %sSolicitar su clave en línea gratis%s.';
+
 ?>

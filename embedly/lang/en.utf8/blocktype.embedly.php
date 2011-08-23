@@ -41,4 +41,7 @@ $string['aligncenter'] = 'Center';
 $string['alignright'] = 'Right';
 $string['invalidurl'] = 'Invalid URL';
 
+$string['apikey'] = 'Embed.ly API key';
+$string['apikeydescription'] = 'To embed web content, you\'ll need a valid Embed.ly API key. %sApply for your free key online%s.';
+
 ?>

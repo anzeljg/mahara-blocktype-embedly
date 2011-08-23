@@ -41,4 +41,7 @@ $string['alignleft'] = 'Links';
 $string['aligncenter'] = 'Zentriert';
 $string['alignright'] = 'Rechts';
 
+$string['apikey'] = 'Embed.ly API-Schlüssel';
+$string['apikeydescription'] = 'Zum Einbetten von Web-Inhalten, benötigen Sie eine gültige Embed.ly API-Schlüssel. %sBewerben Sie Ihren Schlüssel online%s.';
+
 ?>

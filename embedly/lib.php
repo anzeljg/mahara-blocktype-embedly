@@ -47,10 +47,15 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
     }
 
     public static function get_categories() {
-        return array('feeds');
+        return array(
+			'external', // For Mahara 1.4.x and newer
+			'feeds',    // For Mahara 1.3.x and older
+		);
     }
 
     public static function render_instance(BlockInstance $instance, $editing=false) {
+		global $USER;
+		$embedlyapikey = $USER->get_account_preference('embedlyapikey');
         $configdata = $instance->get('configdata');
         $width   = (!empty($configdata['width'])) ? hsc($configdata['width']) : null;
         $height  = (!empty($configdata['height'])) ? hsc($configdata['height']) : null;
@@ -69,7 +74,7 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
             // view editing page, keep the embed code out of the page
             // initially and add it in after the page has loaded.
 
-			$url = 'http://api.embed.ly/1/oembed?url=' . urlencode($configdata['mediaid']) . '&maxwidth=' . $width . '&maxheight=' . $height . '&wmode=transparent';
+			$url = 'http://api.embed.ly/1/oembed?key=' . $embedlyapikey . '&url=' . urlencode($configdata['mediaid']) . '&maxwidth=' . $width . '&maxheight=' . $height . '&wmode=transparent';
             $request = array(
                 CURLOPT_URL => $url,
             );
@@ -104,14 +109,25 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
     }
 
     public static function instance_config_form($instance) {
+		global $USER;
+		$embedlyapikey = $USER->get_account_preference('embedlyapikey');
         $configdata = $instance->get('configdata');
         return array(
             'mediaid' => array(
                 'type'  => 'text',
                 'title' => get_string('mediaurl','blocktype.embedly'),
-                'description' => get_string('mediaurldescription2','blocktype.embedly', '<a href="http://api.embed.ly/" target="_blank">', '</a>')
-								 . '<br>' . get_string('mediaurlpatterns','blocktype.embedly', '<a href="http://api.embed.ly/" target="_blank">', '</a>'),
+                'description' => get_string('mediaurldescription2','blocktype.embedly', '<a href="http://embed.ly/providers" target="_blank">', '</a>')
+								 . '<br>' . get_string('mediaurlpatterns','blocktype.embedly', '<a href="http://embed.ly/providers" target="_blank">', '</a>'),
                 'defaultvalue' => isset($configdata['mediaid']) ? $configdata['mediaid'] : null,
+                'rules' => array(
+                    'required' => true
+                ),
+            ),
+            'apikey' => array(
+                'type'  => 'text',
+                'title' => get_string('apikey','blocktype.embedly'),
+                'description' => get_string('apikeydescription','blocktype.embedly', '<a href="http://embed.ly/pricing/free" target="_blank">', '</a>'),
+                'defaultvalue' => isset($embedlyapikey) ? $embedlyapikey : null,
                 'rules' => array(
                     'required' => true
                 ),
@@ -165,7 +181,12 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
     }
 
     public static function instance_config_save($values) {
-        if ($values['mediaid']) {
+		global $USER;
+        if (isset($values['apikey'])) {
+			$USER->set_account_preference('embedlyapikey', $values['apikey']);
+			unset($values['apikey']);
+		}
+        if (isset($values['mediaid'])) {
 			$values['mediaid'] = str_replace('https', 'http', $values['mediaid']);
 		}
         return $values;
