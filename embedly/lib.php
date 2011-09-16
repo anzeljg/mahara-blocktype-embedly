@@ -27,15 +27,6 @@
 
 defined('INTERNAL') || die();
 
-/**
- * todos before this block type can be considered complete
- *  - document this class and methods
- *  - correct category
- *  - more video url sources, and good default behaviour
- *  - block title editable
- *  - i18n
- *  - minvalue/maxvalue rules
- */
 class PluginBlocktypeEmbedly extends SystemBlocktype {
 
     public static function get_title() {
@@ -110,7 +101,15 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
 
     public static function instance_config_form($instance) {
 		global $USER;
-		$embedlyapikey = $USER->get_account_preference('embedlyapikey');
+		$embedlysiteapikey = get_config_plugin('blocktype', 'embedly', 'embedlysiteapikey');
+		if (empty($embedlysiteapikey)) {
+			$defaulttype = 'text';
+			$embedlyapikey = $USER->get_account_preference('embedlyapikey');
+			$defaultkey = (isset($embedlyapikey) ? $embedlyapikey : null);
+		} else {
+			$defaulttype = 'hidden';
+			$defaultkey = $embedlysiteapikey;
+		}
         $configdata = $instance->get('configdata');
         return array(
             'mediaid' => array(
@@ -124,10 +123,11 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
                 ),
             ),
             'apikey' => array(
-                'type'  => 'text',
+                'type'  => $defaulttype,
                 'title' => get_string('apikey','blocktype.embedly'),
                 'description' => get_string('apikeydescription','blocktype.embedly', '<a href="http://embed.ly/pricing/free" target="_blank">', '</a>'),
-                'defaultvalue' => isset($embedlyapikey) ? $embedlyapikey : null,
+                'defaultvalue' => $defaultkey,
+                'value' => $defaultkey,
                 'rules' => array(
                     'required' => true
                 ),
@@ -190,6 +190,36 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
 			$values['mediaid'] = str_replace('https', 'http', $values['mediaid']);
 		}
         return $values;
+    }
+
+    public static function has_config() {
+        return true;
+    }
+
+    public static function get_config_options() {
+        $elements = array();
+        $elements['apikey'] = array(
+            'type' => 'fieldset',
+            'legend' => get_string('apikey', 'blocktype.embedly'),
+            'elements' => array(
+                'embedlysiteapikeydesc' => array(
+                    'value' => get_string('apikeydescription','blocktype.embedly', '<a href="http://embed.ly/pricing/free" target="_blank">', '</a>')
+                ),
+                'embedlysiteapikey' => array(
+                    'title'        => get_string('apikey', 'blocktype.embedly'),
+                    'type'         => 'text',
+                    'defaultvalue' => get_config_plugin('blocktype', 'embedly', 'embedlysiteapikey'),
+                )
+            ),
+        );
+        return array(
+            'elements' => $elements,
+        );
+
+    }
+
+    public static function save_config_options($values) {
+        set_config_plugin('blocktype', 'embedly', 'embedlysiteapikey', $values['embedlysiteapikey']);
     }
 
 	
