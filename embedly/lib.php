@@ -75,7 +75,7 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
 			$result = '<div class="' . $align . '">';
 			switch ($data['type']) {
 				case 'photo':
-					$result .= '<img src="' . $data['url'] . '" width="' . $data['width'] . '" height="' . $data['height'] . '" border="0">';
+					$result .= '<img src="' . $data['url'] . '" width="' . $width . '" height="' . $height . '" border="0">';
 					break;
 				case 'video':
 				case 'rich' :
