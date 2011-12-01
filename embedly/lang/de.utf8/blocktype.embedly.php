@@ -32,7 +32,7 @@ $string['description'] = 'Bettet externe Inhalte ein';
 $string['mediaurl'] = 'Web URL';
 $string['mediaurldescription2'] = 'Fügen Sie die Adresse der Seite, auf der sich der Inhalt (Video, Bild, Audio, etc. ) befindet, hier ein. Sie können Inhalte von folgenden %sDiensten%s einbinden.';
 $string['mediaurlpatterns'] = 'Bevor Sie eine URL einbetten, können Sie auf der %sEmbed.ly Webseite%s testen, ob der jeweilige Dienst unterstützt wird. Nähere Informationen hierzu in den Tutorials bzw. auf den Hilfeseiten des %sAnbieters%s.';
-$string['showdescription'] = 'Beschreibung anzeigen?';
+$string['showdescription'] = 'Inhalt Beschreibung anzeigen?';
 $string['width'] = 'Breite';
 $string['height'] = 'Höhe';
 $string['invalidurl'] = 'ungültige URL';
@@ -43,5 +43,8 @@ $string['alignright'] = 'Rechts';
 
 $string['apikey'] = 'Embed.ly API-Schlüssel';
 $string['apikeydescription'] = 'Zum Einbetten von Web-Inhalten, benötigen Sie eine gültige Embed.ly API-Schlüssel. %sBewerben Sie Ihren Schlüssel online%s.';
+
+$string['mediadesc'] = 'Beschreibung';
+$string['mediadesc2'] = 'Warum haben Sie, um diesen Inhalt einzubetten?';
 
 ?>

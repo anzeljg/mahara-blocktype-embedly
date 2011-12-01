@@ -73,6 +73,7 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
             $data = json_decode($result->data, true);
 
 			$result = '<div class="' . $align . '">';
+			$result .= '<p>' . $configdata['mediadesc'] . '</p>';
 			switch ($data['type']) {
 				case 'photo':
 					$result .= '<img src="' . $data['url'] . '" width="' . $width . '" height="' . $height . '" border="0">';
@@ -112,6 +113,14 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
 		}
         $configdata = $instance->get('configdata');
         return array(
+            'mediadesc' => array(
+                'type'  => 'wysiwyg',
+                'title' => get_string('mediadesc','blocktype.embedly'),
+				'cols' => 80,
+				'rows' => 6,
+                'description' => get_string('mediadesc2','blocktype.embedly'),
+                'defaultvalue' => isset($configdata['mediadesc']) ? $configdata['mediadesc'] : null,
+            ),
             'mediaid' => array(
                 'type'  => 'text',
                 'title' => get_string('mediaurl','blocktype.embedly'),

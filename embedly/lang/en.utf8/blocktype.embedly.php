@@ -32,7 +32,7 @@ $string['description'] = 'Embed external content';
 $string['mediaurl'] = 'Content URL';
 $string['mediaurldescription2'] = 'Paste the URL of the page where the content (video, image, audio, etc.) is located. You can embed content from the following %sservices%s.';
 $string['mediaurlpatterns'] = 'To see which url patterns from each service you can embed, open page of supported %sservices%s and click service name.';
-$string['showdescription'] = 'Show Description?';
+$string['showdescription'] = 'Show content description?';
 $string['width'] = 'Width';
 $string['height'] = 'Height';
 $string['align'] = 'Align';
@@ -43,5 +43,8 @@ $string['invalidurl'] = 'Invalid URL';
 
 $string['apikey'] = 'Embed.ly API key';
 $string['apikeydescription'] = 'To embed web content, you\'ll need a valid Embed.ly API key. %sApply for your free key online%s.';
+
+$string['mediadesc'] = 'Description';
+$string['mediadesc2'] = 'Why did you choose to embed this content?';
 
 ?>

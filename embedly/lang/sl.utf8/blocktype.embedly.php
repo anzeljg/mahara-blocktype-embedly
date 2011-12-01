@@ -32,7 +32,7 @@ $string['description'] = 'Vgradite zunanjo vsebino';
 $string['mediaurl'] = 'URL vsebine';
 $string['mediaurldescription2'] = 'Prilepite URL strani, ki vsebuje vsebino (video, slike, zvok, itd.). Vgradite lahko vsebino naslednjih %sstoritev%s.';
 $string['mediaurlpatterns'] = 'Če si želite ogledati, katere url-je storitve lahko vgradite, odprite stran podprtih %sstoritev%s in kliknite na ime storitve.';
-$string['showdescription'] = 'Prikažem opis?';
+$string['showdescription'] = 'Prikažem opis vsebine?';
 $string['width'] = 'Širina';
 $string['height'] = 'Višina';
 $string['align'] = 'Poravnava';
@@ -43,5 +43,8 @@ $string['invalidurl'] = 'Neveljaven URL';
 
 $string['apikey'] = 'Embed.ly API ključ';
 $string['apikeydescription'] = 'Če želite vgraditi spletne vsebine boste potrebovali veljaven Embed.ly API ključ. %sZaprosite za svoj brezplačni ključ na spletu%s.';
+
+$string['mediadesc'] = 'Opis';
+$string['mediadesc2'] = 'Zakaj ste se odločili za vgradnjo te vsebine?';
 
 ?>

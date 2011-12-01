@@ -34,7 +34,7 @@ $string['description'] = 'Insertar contenido externo';
 $string['mediaurl'] = 'URL del contenido';
 $string['mediaurldescription2'] = 'Pegue la URL de la página donde está disponible el contenido (vídeo, imagen, audio, etc.). Puede incorporar contenido desde los siguientes %sservicios%s.';
 $string['mediaurlpatterns'] = 'Para ver que patrones de URL puede incorporar desde cada servicio, abra la página de los %sservicios%s disponibles y pulse sobre el nombre del servicio.';
-$string['showdescription'] = '¿Mostrar descripción?';
+$string['showdescription'] = '¿Mostrar descripción del contenido?';
 $string['width'] = 'Anchura';
 $string['height'] = 'Altura';
 $string['align'] = 'Alinear';
@@ -45,5 +45,8 @@ $string['invalidurl'] = 'URL inválida';
 
 $string['apikey'] = 'Embed.ly clave de la API';
 $string['apikeydescription'] = 'Para incrustar contenido de la web, usted necesitará una válida Embed.ly clave de la API. %sSolicitar su clave en línea gratis%s.';
+
+$string['mediadesc'] = 'Descripción';
+$string['mediadesc2'] = '¿Por qué eligió para integrar el contenido?';
 
 ?>
