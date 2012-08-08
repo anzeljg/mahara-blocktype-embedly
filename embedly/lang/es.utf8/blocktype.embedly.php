@@ -25,6 +25,7 @@
  * @copyright  (C) 2011 Gregor Anzelj, gregor.anzelj@gmail.com
  * @copyright  (C) 2011 Iñaki Arenaza, inaki.arenaza@gmail.com
  *
+ * @translator Iñaki Arenaza
  */
 
 defined('INTERNAL') || die();
@@ -48,5 +49,10 @@ $string['apikeydescription'] = 'Para incrustar contenido de la web, usted necesi
 
 $string['mediadesc'] = 'Descripción';
 $string['mediadesc2'] = '¿Por qué eligió para integrar el contenido?';
+
+$string['userapikey'] = 'Borrar la clave de API de Embed.ly';
+$string['userapikeydescription'] = 'Si no se ha establecido una clave de API de Embed.ly para todo el sitio, cada usuario puede establecer su propia clave de API de Embed.ly. Si el usuario configura por accidente algo que no sea una clave de API de Embed.ly válida, el administrador puede borrar esa configuración';
+$string['userid'] = 'ID de usuario';
+$string['useriddesc'] = 'Introduzca el ID el usuario cuya clave de API de Embed.ly desee borrar. Después pulse el botón Guardar';
 
 ?>

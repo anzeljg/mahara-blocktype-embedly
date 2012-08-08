@@ -22,8 +22,10 @@
  * @author     Gregor Anzelj
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL
  * @copyright  (C) 2011 Gregor Anzelj, gregor.anzelj@gmail.com
- * @translator Stéphane Lavoie, lavoie.stephane@fgamonteregie.qc.ca 
-**/
+ *
+ * @translator Dominique-Alain Jan
+ * @translator Stéphane Lavoie 
+ */
 
 defined('INTERNAL') || die();
 
@@ -46,5 +48,10 @@ $string['apikeydescription'] = 'Pour incorporer des ressources web, vous aurez b
 
 $string['mediadesc'] = 'Description';
 $string['mediadesc2'] = 'Pourquoi avez-vous choisi d\'incorporer cette ressource?';
+
+$string['userapikey'] = 'Effacer la clé API Embed.ly de l\'utilisateur';
+$string['userapikeydescription'] = 'Si la clé API Embded.ly n\'est pas définie au niveau du site, chaque utilisateur peut alors utiliser sa propre clé API Embed.ly. Si un utilisateur saisit une information erronée dans cette rubrique, un administrateur du site peut supprimer cette information.';
+$string['userid'] = 'Nom d\'utilisateur';
+$string['useriddesc'] = 'Entrez le nom d\'utilisateur de l\'utilisateur pour lequel vous désirez supprimer la clé API Embed.ly API. Cliquez ensuite sur le bouton Enregistrer.';
 
 ?>

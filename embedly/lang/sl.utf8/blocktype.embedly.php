@@ -47,4 +47,9 @@ $string['apikeydescription'] = 'Če želite vgraditi spletne vsebine boste potre
 $string['mediadesc'] = 'Opis';
 $string['mediadesc2'] = 'Zakaj ste se odločili za vgradnjo te vsebine?';
 
+$string['userapikey'] = 'Odstrani uporabnikov Embed.ly API ključ';
+$string['userapikeydescription'] = 'Če Embed.ly API ključ za spletišče ni nastavljen, potem lahko vsak uporabnik nastavi svoj lastni Embed.ly API ključ. Če uporabnik po nesreči nastavi nekaj drugega kot Embed.ly API ključ, potem lahko skrbnik odstrani to nastavitev.';
+$string['userid'] = 'ID uporabnika';
+$string['useriddesc'] = 'Vnesite ID uporabnika, čigar Embed.ly API ključ želite odstraniti. Nato kliknite gumb Shrani.';
+
 ?>

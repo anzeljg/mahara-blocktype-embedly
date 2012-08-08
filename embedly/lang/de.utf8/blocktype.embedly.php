@@ -23,6 +23,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL
  * @copyright  (C) 2011 Gregor Anzelj, gregor.anzelj@gmail.com
  *
+ * @translator Heinz Krettek
+ * @translator Dirk Meyer
  */
 
 defined('INTERNAL') || die();
@@ -46,5 +48,10 @@ $string['apikeydescription'] = 'Zum Einbetten von Web-Inhalten, benötigen Sie e
 
 $string['mediadesc'] = 'Beschreibung';
 $string['mediadesc2'] = 'Warum haben Sie, um diesen Inhalt einzubetten?';
+
+$string['userapikey'] = 'Benutzer API-Schlüssel löschen';
+$string['userapikeydescription'] = 'Sollte der Seitenweite API-Schlüssel nicht gesetzt sein, können Benutzer Ihre eigenen API-Schlüssel einstellen. Nach einer Fehleingabe, kann ein Websiteadministrator die Eingabe löschen.';
+$string['userid'] = 'Benutzername';
+$string['useriddesc'] = 'Bitte den Benutzername eingeben, dessen API-Schlüssel gelöscht werden soll. Danach Speichertaste drücken.';
 
 ?>

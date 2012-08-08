@@ -212,6 +212,7 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
             'legend' => get_string('apikey', 'blocktype.embedly'),
             'elements' => array(
                 'embedlysiteapikeydesc' => array(
+					'type'  => 'html',
                     'value' => get_string('apikeydescription','blocktype.embedly', '<a href="http://embed.ly/pricing/free" target="_blank">', '</a>')
                 ),
                 'embedlysiteapikey' => array(
@@ -221,6 +222,26 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
                 )
             ),
         );
+        $elements['userapikey'] = array(
+            'type' => 'fieldset',
+			'collapsible' => true,
+			'collapsed' => true,
+            'legend' => get_string('userapikey', 'blocktype.embedly'),
+            'elements' => array(
+                'embedlyuserapikeydesc' => array(
+					'type'  => 'html',
+                    'value' => get_string('userapikeydescription','blocktype.embedly', '<a href="http://embed.ly/pricing/free" target="_blank">', '</a>')
+                ),
+                'userid' => array(
+                    'title'        => get_string('userid', 'blocktype.embedly'),
+                    'type'         => 'text',
+					'description'  => get_string('useriddesc', 'blocktype.embedly'),
+                    'defaultvalue' => 0,
+					'rules' => array('integer' => true),
+                ),
+				
+            ),
+        );
         return array(
             'elements' => $elements,
         );
@@ -228,7 +249,12 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
     }
 
     public static function save_config_options($values) {
+		// Set Embedly API key - this is site API key!
         set_config_plugin('blocktype', 'embedly', 'embedlysiteapikey', $values['embedlysiteapikey']);
+		// If user ID is set, than clear Embedly API key for that user...
+		if ($values['userid'] > 0) {
+			set_field('usr_account_preference', 'value', null, 'usr', $values['userid'], 'field', 'embedlyapikey');
+		}
     }
 
 	

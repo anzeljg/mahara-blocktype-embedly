@@ -47,4 +47,9 @@ $string['apikeydescription'] = 'To embed web content, you\'ll need a valid Embed
 $string['mediadesc'] = 'Description';
 $string['mediadesc2'] = 'Why did you choose to embed this content?';
 
+$string['userapikey'] = 'Clear user\'s Embed.ly API key';
+$string['userapikeydescription'] = 'If the site wide Embed.ly API key is not set, than each user can set own Embed.ly API key. If the user by accident sets something else than Embed.ly API key, admin can clear this setting.';
+$string['userid'] = 'User ID';
+$string['useriddesc'] = 'Enter the ID of the user who\'s Embed.ly API key you wish to clear. Than click Save button.';
+
 ?>
