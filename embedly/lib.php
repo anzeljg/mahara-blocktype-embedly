@@ -30,7 +30,13 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
 
     public static function render_instance(BlockInstance $instance, $editing=false) {
 		global $USER;
-		$embedlyapikey = $USER->get_account_preference('embedlyapikey');
+		// Get site wide Embed.ly API key
+		$embedlyapikey = get_config_plugin('blocktype', 'embedly', 'embedlysiteapikey');
+		// Get user's Embed.ly API key if site wide key is empty or not set
+		if (empty($embedlyapikey) || !isset($embedlyapikey)) {
+		    $owner = $instance->get('view_obj')->get('owner');
+		    $embedlyapikey = get_account_preference($owner, 'embedlyapikey');
+		}
         $configdata = $instance->get('configdata');
         $width   = (!empty($configdata['width'])) ? hsc($configdata['width']) : null;
         $height  = (!empty($configdata['height'])) ? hsc($configdata['height']) : null;
