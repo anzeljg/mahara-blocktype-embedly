@@ -28,7 +28,7 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
 		);
     }
 
-    public static function render_instance(BlockInstance $instance, $editing=false) {
+    public static function render_instance(BlockInstance $instance, $editing=false, $versioning=false) {
 		global $USER;
 		// Get site wide Embed.ly API key
 		$embedlyapikey = get_config_plugin('blocktype', 'embedly', 'embedlysiteapikey');
@@ -90,7 +90,7 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
         return true;
     }
 
-    public static function instance_config_form($instance) {
+    public static function instance_config_form(BlockInstance $instance) {
 		global $USER;
 		$embedlysiteapikey = get_config_plugin('blocktype', 'embedly', 'embedlysiteapikey');
 		if (empty($embedlysiteapikey)) {
@@ -238,7 +238,7 @@ class PluginBlocktypeEmbedly extends SystemBlocktype {
 
     }
 
-    public static function save_config_options($form, $values) {
+    public static function save_config_options(Pieform $form, $values) {
 		// Set Embedly API key - this is site API key!
         set_config_plugin('blocktype', 'embedly', 'embedlysiteapikey', $values['embedlysiteapikey']);
 		// If user ID is set, than clear Embedly API key for that user...
